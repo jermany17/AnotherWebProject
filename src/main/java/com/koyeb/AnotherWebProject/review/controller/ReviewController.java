@@ -23,16 +23,15 @@ public class ReviewController {
     }
 
     // read
+    @GetMapping()
+    public List<ReviewEntity> getAllReviews() {
+        return reviewService.getAllReviews();
+    }
     @GetMapping("/{id}")
     public ResponseEntity<ReviewEntity> getReviewById(@PathVariable Long id) {
         return reviewService.getReviewById(id)
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
-    }
-
-    @GetMapping()
-    public List<ReviewEntity> getAllReviews() {
-        return reviewService.getAllReviews();
     }
 
     // update

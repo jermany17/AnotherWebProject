@@ -23,16 +23,15 @@ public class IngredientsController {
     }
 
     // read
+    @GetMapping()
+    public List<IngredientsEntity> getAllIngredients() {
+        return ingredientsService.getAllIngredients();
+    }
     @GetMapping("/{id}")
     public ResponseEntity<IngredientsEntity> getIngredientById(@PathVariable Long id) {
         return ingredientsService.getIngredientById(id)
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
-    }
-
-    @GetMapping()
-    public List<IngredientsEntity> getAllIngredients() {
-        return ingredientsService.getAllIngredients();
     }
 
     // update

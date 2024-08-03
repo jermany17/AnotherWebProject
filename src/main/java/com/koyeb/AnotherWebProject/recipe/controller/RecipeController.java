@@ -22,15 +22,15 @@ public class RecipeController {
     }
 
     // read
+    @GetMapping()
+    public List<RecipeEntity> getAllRecipes() {
+        return recipeService.getAllRecipes();
+    }
     @GetMapping("/{id}")
     public ResponseEntity<RecipeEntity> getRecipeById(@PathVariable Long id) {
         return recipeService.getRecipeById(id)
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
-    }
-    @GetMapping()
-    public List<RecipeEntity> getAllRecipes() {
-        return recipeService.getAllRecipes();
     }
 
     //update
