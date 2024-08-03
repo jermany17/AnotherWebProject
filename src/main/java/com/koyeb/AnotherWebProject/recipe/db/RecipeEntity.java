@@ -1,7 +1,7 @@
 package com.koyeb.AnotherWebProject.recipe.db;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.koyeb.AnotherWebProject.review.db.ReviewEntity;
+import com.koyeb.AnotherWebProject.ingredients.db.IngredientsEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,6 +37,10 @@ public class RecipeEntity {
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String howtocook;
+
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    //@JsonIgnore, 자식 안 뜨게하려면 지정
+    private List<IngredientsEntity> ingredients;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     //@JsonIgnore, 자식 안 뜨게하려면 지정
