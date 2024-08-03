@@ -16,33 +16,33 @@ public class IngredientsController {
     private IngredientsService ingredientsService;
 
     // create
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<IngredientsEntity> createIngredient(@RequestBody IngredientsDTO ingredientsDTO) {
         IngredientsEntity createdIngredient = ingredientsService.createIngredient(ingredientsDTO);
         return ResponseEntity.ok(createdIngredient); // HTTP 200
     }
 
     // read
-    @GetMapping("/read/id/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<IngredientsEntity> getIngredientById(@PathVariable Long id) {
         return ingredientsService.getIngredientById(id)
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
     }
 
-    @GetMapping("/read/all")
+    @GetMapping()
     public List<IngredientsEntity> getAllIngredients() {
         return ingredientsService.getAllIngredients();
     }
 
     // update
-    @PutMapping("/update/id/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<IngredientsEntity> updateIngredient(@PathVariable Long id, @RequestBody IngredientsEntity ingredientsDetails) {
         return ResponseEntity.ok(ingredientsService.updateIngredient(id, ingredientsDetails));
     }
 
     // delete
-    @DeleteMapping("/delete/id/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteIngredient(@PathVariable Long id) {
         ingredientsService.deleteIngredient(id);
         return ResponseEntity.noContent().build(); // HTTP 204 삭제 성공

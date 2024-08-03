@@ -16,33 +16,33 @@ public class ReviewController {
     private ReviewService reviewService;
 
     // create
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<ReviewEntity> createReview(@RequestBody ReviewDTO reviewDTO) {
         ReviewEntity createdReview = reviewService.createReview(reviewDTO);
         return ResponseEntity.ok(createdReview); // HTTP 200
     }
 
     // read
-    @GetMapping("/read/id/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ReviewEntity> getReviewById(@PathVariable Long id) {
         return reviewService.getReviewById(id)
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
     }
 
-    @GetMapping("/read/all")
+    @GetMapping()
     public List<ReviewEntity> getAllReviews() {
         return reviewService.getAllReviews();
     }
 
     // update
-    @PutMapping("/update/id/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ReviewEntity> updateReview(@PathVariable Long id, @RequestBody ReviewEntity reviewDetails) {
         return ResponseEntity.ok(reviewService.updateReview(id, reviewDetails));
     }
 
     // delete
-    @DeleteMapping("/delete/id/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteReview(@PathVariable Long id) {
         reviewService.deleteReview(id);
         return ResponseEntity.noContent().build(); // HTTP 204 삭제 성공

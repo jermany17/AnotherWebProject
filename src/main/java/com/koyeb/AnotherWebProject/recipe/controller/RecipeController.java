@@ -15,32 +15,32 @@ public class RecipeController {
     private RecipeService recipeService;
 
     // create
-    @PostMapping("/create")
+    @PostMapping()
     public ResponseEntity<RecipeEntity> createRecipe(@RequestBody RecipeEntity recipe) {
         RecipeEntity createdRecipe = recipeService.createRecipe(recipe);
         return ResponseEntity.ok(createdRecipe); // HTTP 200
     }
 
     // read
-    @GetMapping("/read/id/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<RecipeEntity> getRecipeById(@PathVariable Long id) {
         return recipeService.getRecipeById(id)
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
     }
-    @GetMapping("read/all")
+    @GetMapping()
     public List<RecipeEntity> getAllRecipes() {
         return recipeService.getAllRecipes();
     }
 
     //update
-    @PutMapping("update/id/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<RecipeEntity> updateRecipe(@PathVariable Long id, @RequestBody RecipeEntity recipeDetails) {
         return ResponseEntity.ok(recipeService.updateRecipe(id, recipeDetails));
     }
 
     // delete
-    @DeleteMapping("delete/id/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {
         recipeService.deleteRecipe(id);
         return ResponseEntity.noContent().build(); // HTTP 204 삭제 성공
