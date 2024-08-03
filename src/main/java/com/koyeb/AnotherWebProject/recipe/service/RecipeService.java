@@ -36,7 +36,6 @@ public class RecipeService {
         recipe.setAmount(recipeDetails.getAmount());
         recipe.setCookingtime(recipeDetails.getCookingtime());
         recipe.setDifficulty(recipeDetails.getDifficulty());
-        recipe.setIngredients(recipeDetails.getIngredients());
         recipe.setHowtocook(recipeDetails.getHowtocook());
 
         return recipeRepository.save(recipe);
