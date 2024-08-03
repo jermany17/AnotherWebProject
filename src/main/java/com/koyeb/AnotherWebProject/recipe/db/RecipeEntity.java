@@ -35,9 +35,6 @@ public class RecipeEntity {
     @Column(nullable = false)
     private Integer difficulty;
 
-    @Column(length = 200, nullable = false)
-    private String ingredients;
-
     @Column(columnDefinition = "TEXT", nullable = false)
     private String howtocook;
 
