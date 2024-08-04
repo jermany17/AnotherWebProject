@@ -7,7 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -21,22 +24,32 @@ public class RecipeEntity {
     private Long id;
 
     @Column(length = 50, nullable = false)
-    private String username;
+    private String userName;
 
     @Column(length = 50, nullable = false)
-    private String foodname;
+    private String foodName;
 
     @Column(nullable = false)
     private Integer amount;
 
     @Column(nullable = false)
-    private Integer cookingtime;
+    private Integer cookingTime;
 
     @Column(nullable = false)
     private Integer difficulty;
 
     @Column(columnDefinition = "TEXT", nullable = false)
-    private String howtocook;
+    private String howToCook;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime createDate;
+
+    @UpdateTimestamp
+    private LocalDateTime updateDate;
+
+    @Column(columnDefinition = "TEXT")
+    private String imagePath;
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     //@JsonIgnore, 자식 안 뜨게하려면 지정

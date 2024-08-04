@@ -22,14 +22,14 @@ public class ReviewService {
     // create
     public ReviewEntity createReview(ReviewDTO reviewDTO) {
         // 레시피를 찾기, recipeid 존재 확인
-        RecipeEntity recipe = recipeRepository.findById(reviewDTO.getRecipeid())
-                .orElseThrow(() -> new RuntimeException("Recipe not found with id: " + reviewDTO.getRecipeid()));
+        RecipeEntity recipe = recipeRepository.findById(reviewDTO.getRecipeId())
+                .orElseThrow(() -> new RuntimeException("Recipe not found with id: " + reviewDTO.getRecipeId()));
 
         // 찾은 레시피를 사용하여 새로운 ReviewEntity를 생성
         ReviewEntity review = ReviewEntity.builder()
                 .recipe(recipe)
-                .username(reviewDTO.getUsername())
-                .recipescore(reviewDTO.getRecipescore())
+                .userName(reviewDTO.getUserName())
+                .recipeScore(reviewDTO.getRecipeScore())
                 .review(reviewDTO.getReview())
                 .build();
 
@@ -49,8 +49,8 @@ public class ReviewService {
         ReviewEntity review = reviewRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Review not found"));
 
-        review.setUsername(reviewDetails.getUsername());
-        review.setRecipescore(reviewDetails.getRecipescore());
+        review.setUserName(reviewDetails.getUserName());
+        review.setRecipeScore(reviewDetails.getRecipeScore());
         review.setReview(reviewDetails.getReview());
 
         return reviewRepository.save(review);

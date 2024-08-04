@@ -16,11 +16,14 @@ public class IngredientsEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "recipeid", nullable = false)
+    @JoinColumn(name = "recipeId", nullable = false)
     @JsonIgnore       // 무한 반복 방지
     @ToString.Exclude // 무한 반복 방지
     private RecipeEntity recipe;
 
     @Column(length = 50, nullable = false)
     private String ingredient;
+
+    @Column(length = 50)
+    private String weight;
 }

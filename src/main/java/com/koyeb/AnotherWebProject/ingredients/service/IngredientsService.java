@@ -22,13 +22,14 @@ public class IngredientsService {
     // create
     public IngredientsEntity createIngredient(IngredientsDTO ingredientsDTO) {
         // 레시피를 찾기, recipeid 존재 확인
-        RecipeEntity recipe = recipeRepository.findById(ingredientsDTO.getRecipeid())
-                .orElseThrow(() -> new RuntimeException("Recipe not found with id: " + ingredientsDTO.getRecipeid()));
+        RecipeEntity recipe = recipeRepository.findById(ingredientsDTO.getRecipeId())
+                .orElseThrow(() -> new RuntimeException("Recipe not found with id: " + ingredientsDTO.getRecipeId()));
 
         // 찾은 레시피를 사용하여 새로운 IngredientsEntity를 생성
         IngredientsEntity ingredient = IngredientsEntity.builder()
                 .recipe(recipe)
                 .ingredient(ingredientsDTO.getIngredient())
+                .weight(ingredientsDTO.getWeight())
                 .build();
 
         return ingredientsRepository.save(ingredient);
@@ -48,6 +49,7 @@ public class IngredientsService {
                 .orElseThrow(() -> new RuntimeException("Ingredient not found"));
 
         ingredient.setIngredient(ingredientsDetails.getIngredient());
+        ingredient.setWeight(ingredientsDetails.getWeight());
 
         return ingredientsRepository.save(ingredient);
     }

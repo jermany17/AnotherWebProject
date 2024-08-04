@@ -31,12 +31,13 @@ public class RecipeService {
         RecipeEntity recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Recipe not found"));
 
-        recipe.setUsername(recipeDetails.getUsername());
-        recipe.setFoodname(recipeDetails.getFoodname());
+        recipe.setUserName(recipeDetails.getUserName());
+        recipe.setFoodName(recipeDetails.getFoodName());
         recipe.setAmount(recipeDetails.getAmount());
-        recipe.setCookingtime(recipeDetails.getCookingtime());
+        recipe.setCookingTime(recipeDetails.getCookingTime());
         recipe.setDifficulty(recipeDetails.getDifficulty());
-        recipe.setHowtocook(recipeDetails.getHowtocook());
+        recipe.setHowToCook(recipeDetails.getHowToCook());
+        recipe.setImagePath(recipeDetails.getImagePath());
 
         return recipeRepository.save(recipe);
     }
