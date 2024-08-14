@@ -1,8 +1,10 @@
 package com.koyeb.AnotherWebProject.recipe.controller;
 
+import com.koyeb.AnotherWebProject.recipe.db.RecipeDTO;
 import com.koyeb.AnotherWebProject.recipe.db.RecipeEntity;
 import com.koyeb.AnotherWebProject.recipe.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,15 +18,16 @@ public class RecipeController {
 
     // create
     @PostMapping()
-    public ResponseEntity<RecipeEntity> createRecipe(@RequestBody RecipeEntity recipe) {
-        RecipeEntity createdRecipe = recipeService.createRecipe(recipe);
-        return ResponseEntity.ok(createdRecipe); // HTTP 200
+    public ResponseEntity<RecipeEntity> createRecipe(@RequestBody RecipeDTO recipeDTO) {
+        RecipeEntity createdRecipe = recipeService.createRecipe(recipeDTO);
+        return ResponseEntity.ok(createdRecipe);
     }
 
     // read
     @GetMapping()
-    public List<RecipeEntity> getAllRecipes() {
-        return recipeService.getAllRecipes();
+    public Page<RecipeEntity> getRecipes(@RequestParam(defaultValue = "1") int page,
+                                         @RequestParam(required = false) String search) {
+        return recipeService.getRecipesByPageAndSearch(page, search);
     }
     @GetMapping("/{id}")
     public ResponseEntity<RecipeEntity> getRecipeById(@PathVariable Long id) {
@@ -35,8 +38,9 @@ public class RecipeController {
 
     //update
     @PutMapping("/{id}")
-    public ResponseEntity<RecipeEntity> updateRecipe(@PathVariable Long id, @RequestBody RecipeEntity recipeDetails) {
-        return ResponseEntity.ok(recipeService.updateRecipe(id, recipeDetails));
+    public ResponseEntity<RecipeEntity> updateRecipe(@PathVariable Long id, @RequestBody RecipeDTO recipeDTO) {
+        RecipeEntity updatedRecipe = recipeService.updateRecipe(id, recipeDTO);
+        return ResponseEntity.ok(updatedRecipe);
     }
 
     // delete
