@@ -61,7 +61,7 @@ public class RecipeService {
 
     // read
     public Page<RecipeEntity> getRecipesByPageAndSearch(int page, String search) {
-        Pageable pageable = PageRequest.of(page - 1, 9, Sort.by(Sort.Direction.DESC, "id"));
+        Pageable pageable = PageRequest.of(page - 1, 12, Sort.by(Sort.Direction.DESC, "id"));
         if (search != null && !search.isEmpty()) {
             return recipeRepository.findByFoodNameContainingIgnoreCaseOrderByIdDesc(search, pageable);
         } else {

@@ -29,6 +29,10 @@ public class RecipeController {
                                          @RequestParam(required = false) String search) {
         return recipeService.getRecipesByPageAndSearch(page, search);
     }
+    @GetMapping("/all")
+    public List<RecipeEntity> getAllRecipes() {
+        return recipeService.getAllRecipes();
+    }
     @GetMapping("/{id}")
     public ResponseEntity<RecipeEntity> getRecipeById(@PathVariable Long id) {
         return recipeService.getRecipeById(id)
