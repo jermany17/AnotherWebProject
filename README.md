@@ -11,10 +11,6 @@ frontend : 1명 (Next.js)
 ### 사용 언어
 Java(Spring Boot) 
 
-## 진행 완료
-
-## 앞으로의 계획
-
 ---
 
 - 메인 화면
@@ -26,3 +22,7 @@ Java(Spring Boot)
 
 - 레시피 화면
 <img src="https://github.com/user-attachments/assets/d8aafc50-3639-49ff-b5f6-ed625f981823" width="600" height="600" />
+
+## 진행 완료
+
+## 앞으로의 계획
