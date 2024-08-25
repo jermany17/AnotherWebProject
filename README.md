@@ -1,14 +1,14 @@
 # Another Recipe
 
-### 프로젝트 설명(개인 프로젝트)
+### 프로젝트 설명(2인 프로젝트)
 요리 레시피 공유 사이트 :)
+<br>
+backend : 1명
+frontend : 1명
 
-
-백엔드 1명 + 프론트엔드 1명
 
 ### 사용 언어
-Java(Spring Boot)
-
+Java(Spring Boot) + 프론트 팀원(Next.js)
 
 ## 진행 완료
 
