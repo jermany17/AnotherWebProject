@@ -24,10 +24,10 @@ Java(Spring Boot)
 <img src="https://github.com/user-attachments/assets/d8aafc50-3639-49ff-b5f6-ed625f981823" width="600" height="600" />
 
 ## 구현 완료
-Recipe & Ingredients CRUD 구현
-Review CRUD 구현
+Recipe & Ingredients CRUD 구현<br>
+Review CRUD 구현<br>
 Koyeb 배포
 
 ## 앞으로 계획
-로그인/회원가입 구현
+로그인/회원가입 구현<br>
 배포(AWS...?, GCP..?)
