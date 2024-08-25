@@ -23,6 +23,11 @@ Java(Spring Boot)
 - 레시피 화면
 <img src="https://github.com/user-attachments/assets/d8aafc50-3639-49ff-b5f6-ed625f981823" width="600" height="600" />
 
-## 진행 완료
+## 구현 완료
+Recipe & Ingredients CRUD 구현
+Review CRUD 구현
+Koyeb 배포
 
-## 앞으로의 계획
+## 앞으로 계획
+로그인/회원가입 구현
+배포(AWS...?, GCP..?)
