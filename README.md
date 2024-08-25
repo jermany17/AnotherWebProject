@@ -6,12 +6,10 @@
 ### 2인 프로젝트
 backend : 1명
 <br>
-frontend : 1명
+frontend : 1명 (Next.js)
 
 ### 사용 언어
 Java(Spring Boot) 
-<br> 
-(+) front 팀원(Next.js)
 
 ## 진행 완료
 
