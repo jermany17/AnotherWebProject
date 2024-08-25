@@ -29,7 +29,7 @@ public class ReviewService {
         ReviewEntity review = ReviewEntity.builder()
                 .recipe(recipe)
                 .userName(reviewDTO.getUserName())
-                .recipeScore(reviewDTO.getRecipeScore())
+                .recipeScore(Integer.parseInt(reviewDTO.getRecipeScore()))
                 .review(reviewDTO.getReview())
                 .build();
 
