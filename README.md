@@ -9,7 +9,9 @@ backend : 1명
 frontend : 1명
 
 ### 사용 언어
-Java(Spring Boot) + 프론트 팀원(Next.js)
+Java(Spring Boot) 
+<br> 
+(+) front 팀원(Next.js)
 
 ## 진행 완료
 
