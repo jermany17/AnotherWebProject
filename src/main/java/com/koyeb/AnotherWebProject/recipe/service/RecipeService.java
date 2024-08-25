@@ -31,9 +31,9 @@ public class RecipeService {
         RecipeEntity recipe = RecipeEntity.builder()
                 .userName(recipeDTO.getUserName())
                 .foodName(recipeDTO.getFoodName())
-                .amount(recipeDTO.getAmount())
-                .cookingTime(recipeDTO.getCookingTime())
-                .difficulty(recipeDTO.getDifficulty())
+                .amount(Integer.parseInt(recipeDTO.getAmount()))
+                .cookingTime(Integer.parseInt(recipeDTO.getCookingTime()))
+                .difficulty(Integer.parseInt(recipeDTO.getDifficulty()))
                 .howToCook(recipeDTO.getHowToCook())
                 .imagePath(recipeDTO.getImagePath())
                 .build();
@@ -74,6 +74,14 @@ public class RecipeService {
     public List<RecipeEntity> getAllRecipes() {
         return recipeRepository.findAll();
     }
+    public Page<RecipeEntity> getRecipesByDifficulty(int page, String direction) {
+        Pageable pageable = PageRequest.of(page - 1, 12);
+        if (direction.equalsIgnoreCase("asc")) {
+            return recipeRepository.findAllByOrderByDifficultyAsc(pageable);
+        } else {
+            return recipeRepository.findAllByOrderByDifficultyDesc(pageable);
+        }
+    }
 
     // update
     public RecipeEntity updateRecipe(Long id, RecipeDTO recipeDTO) {
@@ -82,9 +90,9 @@ public class RecipeService {
 
         recipe.setUserName(recipeDTO.getUserName());
         recipe.setFoodName(recipeDTO.getFoodName());
-        recipe.setAmount(recipeDTO.getAmount());
-        recipe.setCookingTime(recipeDTO.getCookingTime());
-        recipe.setDifficulty(recipeDTO.getDifficulty());
+        recipe.setAmount(Integer.parseInt(recipeDTO.getAmount()));
+        recipe.setCookingTime(Integer.parseInt(recipeDTO.getCookingTime()));
+        recipe.setDifficulty(Integer.parseInt(recipeDTO.getDifficulty()));
         recipe.setHowToCook(recipeDTO.getHowToCook());
         recipe.setImagePath(recipeDTO.getImagePath());
 

@@ -39,6 +39,11 @@ public class RecipeController {
                 .map(ResponseEntity::ok) // HTTP 200
                 .orElse(ResponseEntity.notFound().build()); // HTTP 404
     }
+    @GetMapping("/difficulty")
+    public Page<RecipeEntity> getRecipesSortedByDifficulty(@RequestParam(defaultValue = "1") int page,
+                                                           @RequestParam(defaultValue = "desc") String direction) {
+        return recipeService.getRecipesByDifficulty(page, direction);
+    }
 
     //update
     @PutMapping("/{id}")

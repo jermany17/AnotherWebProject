@@ -15,9 +15,9 @@ import java.util.List;
 public class RecipeDTO {
     private String userName;
     private String foodName;
-    private Integer amount;
-    private Integer cookingTime;
-    private Integer difficulty;
+    private String amount;
+    private String cookingTime;
+    private String difficulty;
     private String howToCook;
     private String imagePath;
     private List<IngredientsDTO> ingredients;
