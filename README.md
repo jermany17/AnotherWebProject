@@ -24,7 +24,7 @@ Java(Spring Boot)
 <img src="https://github.com/user-attachments/assets/d8aafc50-3639-49ff-b5f6-ed625f981823" width="600" height="600" />
 
 ## ERD
-<img src="https://github.com/user-attachments/assets/9396e7ac-3f21-4507-9370-d97999b8a144" width="400" height="600" />
+<img src="https://github.com/user-attachments/assets/9396e7ac-3f21-4507-9370-d97999b8a144" width="400" height="650" />
 
 ## 구현 완료
 Recipe & Ingredients CRUD 구현<br>
