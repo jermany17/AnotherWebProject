@@ -1,4 +1,4 @@
-![Untitled](https://github.com/user-attachments/assets/5e940424-32da-42fc-82b2-8dee75e175f9)# Another Recipe(개발 중)
+# Another Recipe(개발 중)
 
 ### 프로젝트 설명
 요리 레시피 공유 사이트 :)
