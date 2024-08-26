@@ -1,4 +1,4 @@
-# Another Recipe(개발 중)
+![Untitled](https://github.com/user-attachments/assets/5e940424-32da-42fc-82b2-8dee75e175f9)# Another Recipe(개발 중)
 
 ### 프로젝트 설명
 요리 레시피 공유 사이트 :)
@@ -24,7 +24,7 @@ Java(Spring Boot)
 <img src="https://github.com/user-attachments/assets/d8aafc50-3639-49ff-b5f6-ed625f981823" width="600" height="600" />
 
 ## ERD
-<img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/7baa1704-7ba8-40a4-863b-9c63cbb7e401/877a234a-be9b-465f-807a-32cd7697a979/Untitled.png" width="400" height="800" />
+<img src="https://github.com/user-attachments/assets/9396e7ac-3f21-4507-9370-d97999b8a144" width="400" height="800" />
 
 ## 구현 완료
 Recipe & Ingredients CRUD 구현<br>
