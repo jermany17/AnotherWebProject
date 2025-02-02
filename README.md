@@ -1,4 +1,4 @@
-# Another Recipe(개발 중)
+# Another Recipe
 
 ### 프로젝트 설명
 요리 레시피 공유 사이트 :)
