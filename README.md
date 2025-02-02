@@ -25,12 +25,3 @@ Java(Spring Boot)
 
 ## ERD
 <img src="https://github.com/user-attachments/assets/9396e7ac-3f21-4507-9370-d97999b8a144" width="400" height="625" />
-
-## 구현 완료
-Recipe & Ingredients CRUD 구현<br>
-Review CRUD 구현<br>
-Koyeb 배포
-
-## 앞으로 계획
-로그인/회원가입 구현<br>
-배포(AWS...?, GCP..?)
