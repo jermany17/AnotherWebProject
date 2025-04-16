@@ -2,9 +2,9 @@ package com.koyeb.AnotherWebProject.ingredients.service;
 
 import com.koyeb.AnotherWebProject.ingredients.db.IngredientsDTO;
 import com.koyeb.AnotherWebProject.ingredients.db.IngredientsEntity;
-import com.koyeb.AnotherWebProject.ingredients.db.IngredientsRepository;
+import com.koyeb.AnotherWebProject.ingredients.repository.IngredientsRepository;
 import com.koyeb.AnotherWebProject.recipe.db.RecipeEntity;
-import com.koyeb.AnotherWebProject.recipe.db.RecipeRepository;
+import com.koyeb.AnotherWebProject.recipe.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

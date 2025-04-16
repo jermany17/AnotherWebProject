@@ -1,10 +1,10 @@
 package com.koyeb.AnotherWebProject.review.service;
 
 import com.koyeb.AnotherWebProject.recipe.db.RecipeEntity;
-import com.koyeb.AnotherWebProject.recipe.db.RecipeRepository;
+import com.koyeb.AnotherWebProject.recipe.repository.RecipeRepository;
 import com.koyeb.AnotherWebProject.review.db.ReviewDTO;
 import com.koyeb.AnotherWebProject.review.db.ReviewEntity;
-import com.koyeb.AnotherWebProject.review.db.ReviewRepository;
+import com.koyeb.AnotherWebProject.review.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

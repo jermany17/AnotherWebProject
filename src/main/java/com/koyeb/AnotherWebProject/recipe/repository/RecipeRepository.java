@@ -1,5 +1,6 @@
-package com.koyeb.AnotherWebProject.recipe.db;
+package com.koyeb.AnotherWebProject.recipe.repository;
 
+import com.koyeb.AnotherWebProject.recipe.db.RecipeEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

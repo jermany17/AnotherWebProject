@@ -1,5 +1,6 @@
-package com.koyeb.AnotherWebProject.ingredients.db;
+package com.koyeb.AnotherWebProject.ingredients.repository;
 
+import com.koyeb.AnotherWebProject.ingredients.db.IngredientsEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
