@@ -1,0 +1,29 @@
+package com.example.AnotherWebProject.ingredients.domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.AnotherWebProject.recipe.domain.RecipeEntity;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity(name = "ingredients")
+public class IngredientsEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "recipeId", nullable = false)
+    @JsonIgnore       // 무한 반복 방지
+    @ToString.Exclude // 무한 반복 방지
+    private RecipeEntity recipe;
+
+    @Column(length = 50, nullable = false)
+    private String ingredient;
+
+    @Column(length = 50)
+    private String weight;
+}
