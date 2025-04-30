@@ -25,7 +25,10 @@ public class ReviewEntity {
     @ToString.Exclude // 무한 반복 방지
     private RecipeEntity recipe;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false)
+    private String userId;
+
+    @Column(nullable = false)
     private String userName;
 
     @Column(nullable = false)

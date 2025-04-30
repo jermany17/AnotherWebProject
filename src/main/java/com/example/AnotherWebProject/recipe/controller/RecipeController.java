@@ -36,7 +36,7 @@ public class RecipeController {
                                         @RequestParam(required = false) String search) {
         try {
             Page<RecipeEntity> recipes = recipeService.getRecipesByPageAndSearch(page, search);
-            return ResponseEntity.ok(recipes);
+            return ResponseEntity.ok(recipes.getContent());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of("message", e.getMessage()));
         }
@@ -68,7 +68,7 @@ public class RecipeController {
                                                           @RequestParam(defaultValue = "desc") String direction) {
         try {
             Page<RecipeEntity> recipes = recipeService.getRecipesByDifficulty(page, direction);
-            return ResponseEntity.ok(recipes);
+            return ResponseEntity.ok(recipes.getContent());
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of("message", e.getMessage()));
         }

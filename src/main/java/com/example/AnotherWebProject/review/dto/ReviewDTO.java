@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ReviewDTO {
     private Long recipeId;
-    private String userName;
     private String recipeScore;
     private String review;
 }
