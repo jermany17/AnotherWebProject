@@ -39,7 +39,7 @@ public class RecipeService {
                 .cookingTime(Integer.parseInt(recipeDTO.getCookingTime()))
                 .difficulty(Integer.parseInt(recipeDTO.getDifficulty()))
                 .howToCook(recipeDTO.getHowToCook())
-                .imagePath(recipeDTO.getImagePath())
+                .images(recipeDTO.getImages())
                 .build();
 
         RecipeEntity savedRecipe = recipeRepository.save(recipe);
@@ -106,7 +106,7 @@ public class RecipeService {
         recipe.setCookingTime(Integer.parseInt(recipeDTO.getCookingTime()));
         recipe.setDifficulty(Integer.parseInt(recipeDTO.getDifficulty()));
         recipe.setHowToCook(recipeDTO.getHowToCook());
-        recipe.setImagePath(recipeDTO.getImagePath());
+        recipe.setImages(recipeDTO.getImages());
 
         RecipeEntity updatedRecipe = recipeRepository.save(recipe);
 

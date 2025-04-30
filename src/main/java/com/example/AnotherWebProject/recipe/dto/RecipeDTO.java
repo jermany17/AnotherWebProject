@@ -18,6 +18,6 @@ public class RecipeDTO {
     private String cookingTime;
     private String difficulty;
     private String howToCook;
-    private String imagePath;
+    private List<String> images;
     private List<IngredientsDTO> ingredients;
 }

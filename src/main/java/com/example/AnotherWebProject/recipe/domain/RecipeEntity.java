@@ -11,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -21,38 +22,41 @@ import java.util.List;
 public class RecipeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String userId;
 
-    @Column(nullable = false)
+    @Column(name = "user_name", nullable = false)
     private String userName;
 
-    @Column(nullable = false)
+    @Column(name = "food_name", nullable = false)
     private String foodName;
 
-    @Column(nullable = false)
+    @Column(name = "amount", nullable = false)
     private Integer amount;
 
-    @Column(nullable = false)
+    @Column(name = "cooking_time", nullable = false)
     private Integer cookingTime;
 
-    @Column(nullable = false)
+    @Column(name = "difficulty", nullable = false)
     private Integer difficulty;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column(name= "how_to_cook", columnDefinition = "TEXT", nullable = false)
     private String howToCook;
 
     @CreationTimestamp
-    @Column(updatable = false)
-    private LocalDateTime createDate;
+    @Column(name = "create_at", updatable = false)
+    private LocalDateTime createAt;
 
     @UpdateTimestamp
-    private LocalDateTime updateDate;
+    @Column(name = "update_at")
+    private LocalDateTime updateAt;
 
-    @Column(columnDefinition = "TEXT")
-    private String imagePath;
+    @Convert(converter = StringListConverter.class)
+    @Column(name = "images", columnDefinition = "TEXT")
+    private List<String> images = new ArrayList<>();
 
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     //@JsonIgnore, 자식 안 뜨게하려면 지정
