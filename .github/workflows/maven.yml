@@ -8,9 +8,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    env:
-      IMAGE_NAME: jermany17/another-web-project
-
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
@@ -40,12 +37,12 @@ jobs:
       - name: Build Docker image with short commit SHA
         run: |
           VERSION=$(echo "${{ github.sha }}" | cut -c1-7)
-          docker build -t $IMAGE_NAME:$VERSION .
           echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "IMAGE_NAME=jermany17/another-web-project" >> $GITHUB_ENV
+          docker build -t jermany17/another-web-project:$VERSION .
 
       - name: Push Docker image
-        run: |
-          docker push $IMAGE_NAME:${{ env.VERSION }}
+        run: docker push $IMAGE_NAME:${{ env.VERSION }}
 
       - name: Deploy to EC2 via SSH
         uses: appleboy/ssh-action@v1.0.3
