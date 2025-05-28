@@ -56,4 +56,5 @@ jobs:
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
             docker stop app || true && docker rm app || true
-            docker run -d --name app --env-file .env -p 8080:8080 ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+            docker run -d --restart unless-stopped --name app --env-file .env -p 8080:8080 ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
+
