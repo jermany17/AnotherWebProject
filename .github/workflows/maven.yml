@@ -40,7 +40,7 @@ jobs:
       - name: Build Docker image with short commit SHA
         run: |
           VERSION=$(echo "${{ github.sha }}" | cut -c1-7)
-          docker build -t $IMAGE_NAME:$VERSION .
+          docker build -t $IMAGE_NAME:$VERSION -f target/Dockerfile target
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Push Docker image
