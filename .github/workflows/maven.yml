@@ -55,6 +55,5 @@ jobs:
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
-            docker ps -q --filter "publish=8080" | xargs -r docker stop
-            docker ps -aq --filter "publish=8080" | xargs -r docker rm
+            docker stop app || true && docker rm app || true
             docker run -d --name app --env-file .env -p 8080:8080 ${{ env.IMAGE_NAME }}:${{ env.VERSION }}
