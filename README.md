@@ -20,4 +20,4 @@
 - 레시피 및 리뷰 관련 CRUD 기능  
 
 ### 상세 페이지  
-[Notion 링크](https://www.notion.so/Another-Recipe-1d93ca3e4c0d80e38c85e7f032e56ee0?source=copy_link)
+-[Notion 링크](https://www.notion.so/Another-Recipe-1d93ca3e4c0d80e38c85e7f032e56ee0?source=copy_link)
