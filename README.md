@@ -1,27 +1,26 @@
-# Another Recipe
+# Another Recipe: 나만의 요리 레시피 공유 서비스
 
-### 프로젝트 설명
-요리 레시피 공유 사이트
+사용자가 게시물 형태로 자신만의 요리 레시피를 등록하고, 다른 사용자와 공유할 수 있는 웹 애플리케이션
 
-### 2인 프로젝트
-backend : 1명
-<br>
-frontend : 1명 (Next.js)
+## 역할  
+Backend  
 
-### 사용 언어
-Java(Spring Boot) 
+## 사용 기술  
+- Java  
+- Spring Boot  
+- MySQL  
+- AWS RDS  
+- AWS S3  
+- Docker  
+- EC2  
+- GitHub Actions  
 
----
+## 구현 기능  
+- 사용자 인증 기능  
+- 레시피 및 리뷰 관련 CRUD 기능  
 
-- 메인 화면
-<img src="https://github.com/user-attachments/assets/2eaa7e52-4e11-4438-89e5-00316022927f" width="600" height="600" />
+## 상세 페이지  
+[Notion 링크](https://www.notion.so/Another-Recipe-1d93ca3e4c0d80e38c85e7f032e56ee0?source=copy_link)
 
-<br>
-<br>
-<br>
-
-- 레시피 화면
-<img src="https://github.com/user-attachments/assets/d8aafc50-3639-49ff-b5f6-ed625f981823" width="600" height="600" />
-
-## ERD
-<img src="https://github.com/user-attachments/assets/9396e7ac-3f21-4507-9370-d97999b8a144" width="400" height="625" />
+## GitHub  
+[GitHub 저장소](https://github.com/jermany17/AnotherWebProject.git)
