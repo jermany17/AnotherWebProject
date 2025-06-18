@@ -17,7 +17,7 @@ public class CookieConfig {
         serializer.setSameSite("Lax");
 
         // Secure 속성 적용 (true = HTTPS 환경에서만 동작)
-        serializer.setUseSecureCookie(false); // HTTP에서도 동작하도록하려면 false
+        serializer.setUseSecureCookie(true); // HTTP에서도 동작하도록하려면 false
 
         return serializer;
     }
