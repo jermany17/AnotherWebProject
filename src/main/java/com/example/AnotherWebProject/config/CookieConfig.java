@@ -14,7 +14,7 @@ public class CookieConfig {
         DefaultCookieSerializer serializer = new DefaultCookieSerializer();
 
         // SameSite=None 설정 (CORS에서도 세션 쿠키 전송 가능)
-        serializer.setSameSite("None");
+        serializer.setSameSite("Lax");
 
         // Secure 속성 적용 (true = HTTPS 환경에서만 동작)
         serializer.setUseSecureCookie(false); // HTTP에서도 동작하도록하려면 false
